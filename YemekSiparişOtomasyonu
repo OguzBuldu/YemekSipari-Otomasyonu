@@ -1,0 +1,2497 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Menü_Uygulaması
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.WriteLine("Restorantımıza Hoşgeldiniz");
+            Console.WriteLine("***************************");
+            Console.WriteLine("MENÜ");
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("ÇORBA                               |");
+            Console.WriteLine("1) Mercimek Çorbası : 50 Tl         |");
+            Console.WriteLine("2) Ezo Gelin Çorbası: 75 Tl         |");
+            Console.WriteLine("3) Kelle Paça Çorbası: 100 Tl       |");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("ARA SICAKLAR                        |");
+            Console.WriteLine("1) Pirinç Pilavı: 30 Tl             |");
+            Console.WriteLine("2) Bulgur Pilavı: 35 Tl             |");
+            Console.WriteLine("3) Makarna: 40 Tl                   |");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("ANA YEMEKLER                        |");
+            Console.WriteLine("1) Biftek: 200 Tl                   |");
+            Console.WriteLine("2) Köfte: 150 Tl                    |");
+            Console.WriteLine("3) Tavuk Kanat: 100 Tl              |");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("SALATALAR                           |");
+            Console.WriteLine("1) Sezar Salatası: 60 Tl            |");
+            Console.WriteLine("2) Çoban Salatası: 40 Tl            |");
+            Console.WriteLine("3) Tonbalıklı Salata: 80 Tl         |");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("TATLILAR                            |");
+            Console.WriteLine("1) Sütlaç: 45 Tl                    |");
+            Console.WriteLine("2) Künefe: 110 Tl                   |");
+            Console.WriteLine("3) Meyve : 65 Tl                    |");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("**************************************");
+            Console.WriteLine("Çorba İsterseniz Lütfen Satır Başında Rakamlardan Birine Basınız.");
+            Console.WriteLine("Eğer İstemiyorsanız Lütfen 0'a basınız. ");
+
+            while (true)
+            {
+                int corba = int.Parse(Console.ReadLine());
+                if (corba == 1)
+                {
+                    Console.WriteLine("-Mercimek Çorbası- Seçtiniz.");
+                    Console.WriteLine("Ara Sıcak İster Misiniz?");
+                    string aras = Console.ReadLine();
+                    if (aras == "evet")
+                    {
+                        Console.WriteLine("Ara Yemeklerimize Menüden Bakıp Satır Numaralarından Seçebilirsiniz.");
+                        int ara_sıcak = int.Parse(Console.ReadLine());
+                        if (ara_sıcak == 1)
+                        {
+                            Console.WriteLine("-Pirinç Pilavı- Seçtiniz. ");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ana Yemek Alır Mısınız?");
+                            string ana = Console.ReadLine();
+                            if (ana == "evet")
+                            {
+                                Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                int ana_yemek = int.Parse(Console.ReadLine());
+
+                                if (ana_yemek == 1)
+                                {
+                                    Console.WriteLine("-Biftek- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 2)
+                                {
+                                    Console.WriteLine("-Köfte- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                        }
+                                    }
+
+                                }
+                                else if (ana_yemek == 3)
+                                {
+                                    Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        else if (ara_sıcak == 2)
+                        {
+                            Console.WriteLine("-Bulgur Pilavı- Seçtiniz. ");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ana Yemek Alır Mısınız?");
+                            string ana = Console.ReadLine();
+                            if (ana == "evet")
+                            {
+                                Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                int ana_yemek = int.Parse(Console.ReadLine());
+
+                                if (ana_yemek == 1)
+                                {
+                                    Console.WriteLine("-Biftek- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 2)
+                                {
+                                    Console.WriteLine("-Köfte- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                        }
+                                    }
+
+                                }
+                                else if (ana_yemek == 3)
+                                {
+                                    Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if (ara_sıcak == 3)
+                        {
+                            Console.WriteLine("-Makarba- Seçtiniz. ");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ana Yemek Alır Mısınız?");
+                            string ana = Console.ReadLine();
+                            if (ana == "evet")
+                            {
+                                Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                int ana_yemek = int.Parse(Console.ReadLine());
+
+                                if (ana_yemek == 1)
+                                {
+                                    Console.WriteLine("-Biftek- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 2)
+                                {
+                                    Console.WriteLine("-Köfte- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+
+                                }
+                                else if (ana_yemek == 3)
+                                {
+                                    Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (corba == 2)
+                {
+                    Console.WriteLine("-Ezo Gelin Çorbası- Seçtiniz.");
+                    Console.WriteLine("Ara Sıcak İster Misiniz?");
+                    string aras = Console.ReadLine();
+                    if (aras == "evet")
+                    {
+                        Console.WriteLine("Ara Yemeklerimize Menüden Bakıp Satır Numaralarından Seçebilirsiniz.");
+                        int ara_sıcak = int.Parse(Console.ReadLine());
+                        if (ara_sıcak == 1)
+                        {
+                            Console.WriteLine("-Pirinç Pilavı- Seçtiniz. ");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ana Yemek Alır Mısınız?");
+                            string ana = Console.ReadLine();
+                            if (ana == "evet")
+                            {
+                                Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                int ana_yemek = int.Parse(Console.ReadLine());
+
+                                if (ana_yemek == 1)
+                                {
+                                    Console.WriteLine("-Biftek- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 2)
+                                {
+                                    Console.WriteLine("-Köfte- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 3)
+                                {
+                                    Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        else if (ara_sıcak == 2)
+                        {
+                            Console.WriteLine("-Bulgur Pilavı- Seçtiniz. ");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ana Yemek Alır Mısınız?");
+                            string ana = Console.ReadLine();
+                            if (ana == "evet")
+                            {
+                                Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                int ana_yemek = int.Parse(Console.ReadLine());
+
+                                if (ana_yemek == 1)
+                                {
+                                    Console.WriteLine("-Biftek- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Salata İster Misiniz?");
+                                    string Slt = Console.ReadLine();
+                                    if (Slt == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                        int salata = int.Parse(Console.ReadLine());
+                                        if (salata == 1)
+                                        {
+                                            Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 2)
+                                        {
+                                            Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                        else if (salata == 3)
+                                        {
+                                            Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Tatlı İster Misiniz?");
+                                            string ttlı = Console.ReadLine();
+                                            if (ttlı == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                int tatlı = int.Parse(Console.ReadLine());
+                                                if (tatlı == 1)
+                                                {
+                                                    Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                }
+                                                else if (tatlı == 2)
+                                                {
+                                                    Console.WriteLine("-Künefe- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+                                                else if (tatlı == 3)
+                                                {
+                                                    Console.WriteLine("-Meyve- Seçtiniz.");
+                                                    Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ana_yemek == 2)
+                                {
+                                    Console.WriteLine("-Köfte- Seçtiniz.");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Ana Yemek Alır Mısınız?");
+                                    string ana1 = Console.ReadLine();
+                                    if (ana1 == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                        int ana_yemek1 = int.Parse(Console.ReadLine());
+
+                                        if (ana_yemek1 == 1)
+                                        {
+                                            Console.WriteLine("-Biftek- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if (ana_yemek == 3)
+                                        {
+                                            Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ara_sıcak == 3)
+                                {
+                                    Console.WriteLine("-Makarba- Seçtiniz. ");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Ana Yemek Alır Mısınız?");
+                                    string ana1 = Console.ReadLine();
+                                    if (ana1 == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                        int ana_yemek1 = int.Parse(Console.ReadLine());
+
+                                        if (ana_yemek1 == 1)
+                                        {
+                                            Console.WriteLine("-Biftek- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if (ana_yemek == 2)
+                                        {
+                                            Console.WriteLine("-Köfte- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                }
+                                            }
+
+                                        }
+                                        else if (ana_yemek == 3)
+                                        {
+                                            Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+
+
+
+                                }
+                            }
+                        }
+                        else if (corba == 3)
+                        {
+                            Console.WriteLine("-Kelle Paça Çorbası- Seçtiniz");
+                            Console.WriteLine("Ara Sıcak İster Misiniz?");
+                            string aras1 = Console.ReadLine();
+                            if (aras1 == "evet")
+                            {
+                                Console.WriteLine("Ara Yemeklerimize Menüden Bakıp Satır Numaralarından Seçebilirsiniz.");
+                                int ara_sıcak1 = int.Parse(Console.ReadLine());
+                                if (ara_sıcak1 == 1)
+                                {
+                                    Console.WriteLine("-Pirinç Pilavı- Seçtiniz. ");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Ana Yemek Alır Mısınız?");
+                                    string ana = Console.ReadLine();
+                                    if (ana == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                        int ana_yemek = int.Parse(Console.ReadLine());
+
+                                        if (ana_yemek == 1)
+                                        {
+                                            Console.WriteLine("-Biftek- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                }
+                                            }
+                                        }
+                                        else if (ana_yemek == 2)
+                                        {
+                                            Console.WriteLine("-Köfte- Seçtiniz.");
+                                        }
+                                        else if (ana_yemek == 3)
+                                        {
+                                            Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                        }
+                                    }
+
+                                }
+                                else if (ara_sıcak == 2)
+                                {
+                                    Console.WriteLine("-Bulgur Pilavı- Seçtiniz. ");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Ana Yemek Alır Mısınız?");
+                                    string ana = Console.ReadLine();
+                                    if (ana == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                        int ana_yemek = int.Parse(Console.ReadLine());
+
+                                        if (ana_yemek == 1)
+                                        {
+                                            Console.WriteLine("-Biftek- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if (ana_yemek == 2)
+                                        {
+                                            Console.WriteLine("-Köfte- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                        else if (ana_yemek == 3)
+                                        {
+                                            Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ara_sıcak == 3)
+                                {
+                                    Console.WriteLine("-Makarba- Seçtiniz. ");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Ana Yemek Alır Mısınız?");
+                                    string ana = Console.ReadLine();
+                                    if (ana == "evet")
+                                    {
+                                        Console.WriteLine("Menüden İstediğiniz Yemeğin Numarasını Yazınız.");
+                                        int ana_yemek = int.Parse(Console.ReadLine());
+
+                                        if (ana_yemek == 1)
+                                        {
+                                            Console.WriteLine("-Biftek- Seçtiniz.");
+                                            Console.WriteLine("");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if (ana_yemek == 2)
+                                        {
+                                            Console.WriteLine("-Köfte- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                        else if (ana_yemek == 3)
+                                        {
+                                            Console.WriteLine("-Tavuk Kanat- Seçtiniz.");
+                                            Console.WriteLine("Salata İster Misiniz?");
+                                            string Slt = Console.ReadLine();
+                                            if (Slt == "evet")
+                                            {
+                                                Console.WriteLine("Menüden İstediğiniz Salatanın Numarasını Yazınız.");
+                                                int salata = int.Parse(Console.ReadLine());
+                                                if (salata == 1)
+                                                {
+                                                    Console.WriteLine("-Sezar Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 2)
+                                                {
+                                                    Console.WriteLine("-Çoban Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                        }
+
+                                                    }
+                                                }
+                                                else if (salata == 3)
+                                                {
+                                                    Console.WriteLine("-Tombalıklı Salata- Seçtiniz.");
+                                                    Console.WriteLine("");
+                                                    Console.WriteLine("Tatlı İster Misiniz?");
+                                                    string ttlı = Console.ReadLine();
+                                                    if (ttlı == "evet")
+                                                    {
+                                                        Console.WriteLine("Menüden İstediğiniz Tatlının Numarasını Yazınız.");
+                                                        int tatlı = int.Parse(Console.ReadLine());
+                                                        if (tatlı == 1)
+                                                        {
+                                                            Console.WriteLine("-Sütlaç- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+
+
+                                                        }
+                                                        else if (tatlı == 2)
+                                                        {
+                                                            Console.WriteLine("-Künefe- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+                                                        else if (tatlı == 3)
+                                                        {
+                                                            Console.WriteLine("-Meyve- Seçtiniz.");
+                                                            Console.WriteLine("");
+                                                            Console.WriteLine("Siparişiniz Alınmıştır.");
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
